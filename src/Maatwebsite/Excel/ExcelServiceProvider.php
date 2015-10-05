@@ -157,7 +157,7 @@ class ExcelServiceProvider extends ServiceProvider {
         $this->app['excel.writer'] = $this->app->share(function ($app)
         {
             return new LaravelExcelWriter(
-                $app->make('Response'),
+                response(),
                 $app['files'],
                 $app['excel.identifier']
             );
